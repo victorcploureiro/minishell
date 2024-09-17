@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:31:49 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/09/17 15:27:18 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/09/17 17:07:15 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,11 @@ lex_tok[13] >file2
 */
 
 #include "../includes/minishell.h"
+
+int	lexer(char *line)
+{
+	char	**tokens;
+	int		exit_status;
+
+	
+}
