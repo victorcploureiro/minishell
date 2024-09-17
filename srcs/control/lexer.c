@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:31:49 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/09/12 16:08:46 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/09/17 15:27:18 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,4 @@ lex_tok[13] >file2
 
 */
 
-#include "minishell.h"
+#include "../includes/minishell.h"
