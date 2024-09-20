@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:27:17 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/09/18 17:37:04 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:51:03 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,67 @@
 # include <termios.h>   // isatty, ttyname, tcsetattr, tcgetattr
 # include <unistd.h>
 # include <limits.h> //PATH_MAX
+
+typedef enum e_token
+{
+	WORD = 0,
+	REDIN = 1 << 0,
+	REDOUT = 1 << 1,
+	REDIRECTS = 3,
+	HEREDOC = 1 << 2,
+	APPEND = 1 << 3,
+	REDALL = 15,
+	PIPE = 1 << 4,
+	ALLEXRED = 48,
+	ALLEXHEREDOC = 57,
+	ALL = 63,
+	ALL_W_BRACKET = 511,
+	EXEC = 1 << 5
+}					t_token;
+
+typedef struct s_index
+{
+	int				i;
+	int				j;
+	int				k;
+}					t_index;
+
+typedef struct s_parse
+{
+	char			*prompt;
+	char			*prompt_ordered;
+	t_index			*idx;
+	t_vector		*phrase;
+	t_vector		*phrase_grammar;
+}					t_parse;
+
+typedef struct s_vector
+{
+	void			**values;
+	unsigned long	size;
+	unsigned long	capacity;
+}					t_vector;
+
+typedef struct s_node
+{
+	char			*str;
+	char			*str_not_expanded;
+	int				type;
+	struct s_node	*left;
+	struct s_node	*right;
+	t_vector		*phrase;
+	int				fd;
+}					t_node;
+
+typedef struct s_shell
+{
+	char			**envp;
+	t_vector		*envp_dict;
+	t_node			*root;
+	char			*path;
+	char			**path_splitted;
+	char			status;
+}					t_shell;
 
 char	*rline(void);
 
