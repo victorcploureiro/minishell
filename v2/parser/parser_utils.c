@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 15:56:48 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/09/24 16:03:50 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:58:31 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_allocate(t_parse *parse, int size)
 void	ft_handle_quotes(t_parse *parse, char *prompt_ordered, char *signal)
 {
 	if (ft_strchr("\'\"". parse->prompt[parse->idx->i]))
-		ft_parse_quotes(parse, prompt_ordered, signal); // Implementar essa função
+		ft_parse_quotes(parse, prompt_ordered, signal);
 }
 
 void	ft_parse_loop(t_parse *parse, char *prompt_ordered, int size)
