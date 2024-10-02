@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:27:17 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/09/20 15:51:03 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:24:16 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,14 @@ typedef struct s_node
 
 typedef struct s_shell
 {
+	t_parse			*parse;
 	char			**envp;
 	t_vector		*envp_dict;
 	t_node			*root;
 	char			*path;
 	char			**path_splitted;
-	char			status;
+	int				status;
+	char			*str;
 }					t_shell;
 
 char	*rline(void);

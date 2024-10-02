@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:25:00 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/09/20 15:53:30 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:24:46 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,20 @@ void	ft_execute(char *str, t_shell *shell)
 	split_prompt = ft_parser(parse);
 }
 
-char	*rline(void)
+char	*rline(t_shell *shell)
 {
 	char	*prompt;
 
+	ft_status_here(PROMPT, 0);
 	prompt = readline("minishell $> ");
+	ft_status_here(PROMPT, 1);
 	if (!prompt)
+	{
+		printf("exit\n");
+		ft_free_shell(shell);
 		exit(0);
-	add_history(prompt);
+	}
+	if (!ft_prompt_spaces(prompt))
+		add_history(prompt);
 	return (prompt);
 }
