@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:10:17 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/09/24 16:06:26 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:06:38 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,23 @@ int	ft_parse_char(t_parse *parse, char *prompt)
 	}
 	return (0);
 }
-void	ft_prompt_ordering(t_parse *parse) // TODO: refatorar essa função
+void	ft_prompt_ordering(t_parse *parse)
 {
-	int	size;
+	int		size;
+	char	*prompt_ordered;
+	char	*signal;
 
+	signal = NULL;
+	size = 0;
 	if (parse->prompt)
 		size = ft_strlen(parse->prompt);
-	else
-		size = 0;
-	ft_allocate(parse, size);
-	ft_parse_loop(parse, parse->prompt_ordered, size);
-	parse->prompt_ordered[parse->idx->j] = '\0';
+	prompt_ordered = malloc((size * 2) * sizeof(char *) + 1);
+	parse->idx = malloc(sizeof(t_index));
+	parse->idx->i = 0;
+	parse->idx->j = 0;
+	ft_process_prompt(parse, prompt_ordered, size, signal);
+	prompt_ordered[parse->idx->j] = '\0';
+	parse->prompt_ordered = prompt_ordered;
 	free(parse->idx);
 }
 
