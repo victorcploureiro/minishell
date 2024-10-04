@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 15:56:48 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/10/04 15:51:08 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/10/04 17:25:20 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,24 @@ void	ft_parse_loop(t_parse *parse, char *prompt_ordered, int size)
 			prompt_ordered[parse->idx->j] = parse->prompt[parse->idx->i];
 		parse->idx->i++;
 		parse->idx->j++;
+	}
+}
+
+void	ft_treat_subspace(char **split)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	while (split[j])
+	{
+		i = 0;
+		while (split[j][i])
+		{
+			if (split[j][i] == 0x1A)
+				split[j][i] = ' ';
+			i++;
+		}
+		j++;
 	}
 }
