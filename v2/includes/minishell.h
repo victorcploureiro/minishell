@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:27:17 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/10/02 16:24:16 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:31:09 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@
 # include <unistd.h>
 # include <limits.h> //PATH_MAX
 
+# define HERE_DOC	0
+# define FORK	1
+# define PROMPT	2
+
 typedef enum e_token
 {
 	WORD = 0,
@@ -46,6 +50,13 @@ typedef enum e_token
 	ALL_W_BRACKET = 511,
 	EXEC = 1 << 5
 }					t_token;
+
+typedef struct s_status
+{
+	int	_heredoc;
+	int	_fork;
+	int	_prompt;
+}					t_status;
 
 typedef struct s_index
 {
@@ -93,6 +104,9 @@ typedef struct s_shell
 	char			*str;
 }					t_shell;
 
-char	*rline(void);
+char			*rline(t_shell *shell);
+
+int				ft_status_here(int where, int st);
+static t_status	*ft_init_status(void);
 
 #endif
