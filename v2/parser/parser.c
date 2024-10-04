@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:10:17 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/10/02 16:06:38 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/10/04 17:25:56 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	**ft_parser(t_parse *parse)
 
 	ft_prompt_ordering(parse);
 	split = ft_split(parse->prompt_ordered, ' ');
-	ft_treat_subspace(split); // TODO: implementar essa função
+	ft_treat_subspace(split);
 	free(parse->prompt_ordered);
 	return (split);
 }
