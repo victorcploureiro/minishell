@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:23:28 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/10/02 16:24:53 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/10/22 13:33:55 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ int	main(int argc, char **argv, char **envp)
 	while (true)
 	{
 		ft_sigquit();
-		ft_execute(rline(shell), shell);
+		ft_execute(ft_read_input(shell), shell);
 	}
-
 	return (0);
 }

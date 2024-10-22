@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:27:17 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/10/04 16:31:09 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/10/22 10:50:14 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ typedef struct s_parse
 	t_index			*idx;
 	t_vector		*phrase;
 	t_vector		*phrase_grammar;
+	char			**split_prompt;
 }					t_parse;
 
 typedef struct s_vector
