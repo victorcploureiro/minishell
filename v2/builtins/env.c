@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:35:05 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/09/24 16:45:39 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/10/23 12:41:00 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ void	ft_env_print(t_vector *vars)
 	{
 		full_string = ft_strdup(ft_value(vars, i, 3));
 		if (ft_strchr(full_string, '='))
+		{
 			ft_putendl_fd(full_string, STDOUT_FILENO);
 			free(full_string);
 			i++;
+		}
 	}
 }
 
