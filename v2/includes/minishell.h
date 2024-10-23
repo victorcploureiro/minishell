@@ -6,7 +6,7 @@
 /*   By: vcarrara <vcarrara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:27:17 by vcarrara          #+#    #+#             */
-/*   Updated: 2024/10/22 10:50:14 by vcarrara         ###   ########.fr       */
+/*   Updated: 2024/10/23 11:05:02 by vcarrara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # include <unistd.h>
 # include <limits.h> //PATH_MAX
 
+# define FT_VECTOR_INITIAL_CAPACITY	16
 # define HERE_DOC	0
 # define FORK	1
 # define PROMPT	2
